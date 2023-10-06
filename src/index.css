@@ -1,15 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+:root {
+  --blue-gray: #dbd8e3;
+  --black: #1a1c1e;
+  --white: #f2f2f2;
+  --true-navy: #132743;
+  --blue-green: #155263;
+  --orange: #ff6f3c;
+  --light-orange: #ff9a3c;
+  --yellow: #ffc93c;
+}
 
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
 
-html {
-  font-family: 'Noto Sans JP', sans-serif;
+*:not(i) {
+  font-family: 'Inter', sans-serif;
 }
-
-body {
-  margin: 0;
-  background-color: #3f3f3f;
-}
-
