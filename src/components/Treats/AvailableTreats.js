@@ -1,5 +1,8 @@
 import classes from './AvailableTreats.module.css';
 
+import Card from '../UI/Card';
+import TreatItem from './TreatItem';
+
 const DUMMY_TREATS = [
   {
     id: 'm1',
@@ -32,12 +35,21 @@ const DUMMY_TREATS = [
 
 const AvailableTreats = () => {
   const treatsList = DUMMY_TREATS.map((treat) => {
-    return <li>{treat.name}</li>;
+    return (
+      <TreatItem
+        key={treat.id}
+        name={treat.name}
+        description={treat.description}
+        price={treat.price}
+      />
+    );
   });
 
   return (
-    <section>
-      <ul>{treatsList}</ul>
+    <section className={classes.treats}>
+      <Card>
+        <ul>{treatsList}</ul>
+      </Card>
     </section>
   );
 };
