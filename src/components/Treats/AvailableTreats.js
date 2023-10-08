@@ -38,6 +38,7 @@ const AvailableTreats = () => {
     return (
       <TreatItem
         key={treat.id}
+        id={treat.id}
         name={treat.name}
         description={treat.description}
         price={treat.price}
