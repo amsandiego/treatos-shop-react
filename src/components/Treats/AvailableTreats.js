@@ -1,40 +1,36 @@
+import { useState, useEffect } from 'react';
 import classes from './AvailableTreats.module.css';
-
 import Card from '../UI/Card';
 import TreatItem from './TreatItem';
 
-const DUMMY_TREATS = [
-  {
-    id: 'm1',
-    name: 'Pork Liver',
-    description: 'All natural dehydrated pork liver for dogs or cats',
-    price: 195,
-  },
-  {
-    id: 'm2',
-    name: 'Cow Ear',
-    description:
-      'Highly digestible, low fat chew that can be given to puppies too',
-    price: 125,
-  },
-  {
-    id: 'm3',
-    name: 'Chicken Feet',
-    description:
-      'Dehydrated chicken feet that can help your pet maintain joint health',
-    price: 105,
-  },
-  {
-    id: 'm4',
-    name: 'Beef Skin Strips',
-    description:
-      'Long lasting treats perfect for cleaning teeth and maintaining healthy gums',
-    price: 150,
-  },
-];
-
 const AvailableTreats = () => {
-  const treatsList = DUMMY_TREATS.map((treat) => {
+  const [treats, setTreats] = useState([]);
+
+  useEffect(() => {
+    const fetchTreats = async () => {
+      const response = await fetch(
+        'https://react-http-6b6db-default-rtdb.asia-southeast1.firebasedatabase.app/treats.json'
+      );
+      const data = await response.json();
+
+      const loadedTreats = [];
+
+      for (const key in data) {
+        loadedTreats.push({
+          id: key,
+          name: data[key].name,
+          description: data[key].description,
+          price: data[key].price,
+        });
+      }
+
+      setTreats(loadedTreats);
+    };
+
+    fetchTreats();
+  }, []);
+
+  const treatsList = treats.map((treat) => {
     return (
       <TreatItem
         key={treat.id}
