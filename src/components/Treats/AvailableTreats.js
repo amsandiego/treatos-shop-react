@@ -5,12 +5,19 @@ import TreatItem from './TreatItem';
 
 const AvailableTreats = () => {
   const [treats, setTreats] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [httpError, setHttpError] = useState();
 
   useEffect(() => {
     const fetchTreats = async () => {
       const response = await fetch(
         'https://react-http-6b6db-default-rtdb.asia-southeast1.firebasedatabase.app/treats.json'
       );
+
+      if (!response.ok) {
+        throw new Error('Something went wrong!');
+      }
+
       const data = await response.json();
 
       const loadedTreats = [];
@@ -25,11 +32,30 @@ const AvailableTreats = () => {
       }
 
       setTreats(loadedTreats);
+      setIsLoading(false);
     };
 
-    fetchTreats();
+    fetchTreats().catch((error) => {
+      setIsLoading(false);
+      setHttpError(error.message);
+    });
   }, []);
 
+  if (isLoading) {
+    return (
+      <section className={classes.TreatsLoading}>
+        <p>Loading...</p>
+      </section>
+    );
+  }
+
+  if (httpError) {
+    return (
+      <section className={classes.TreatsError}>
+        <p>{httpError}</p>
+      </section>
+    );
+  }
   const treatsList = treats.map((treat) => {
     return (
       <TreatItem

@@ -5,6 +5,16 @@
   animation: treats-appear 1s ease-out forwards;
 }
 
+.TreatsLoading {
+  text-align: center;
+  color: white;
+}
+
+.TreatsError {
+  text-align: center;
+  color: red;
+}
+
 .treats ul {
   list-style: none;
   margin: 0;
