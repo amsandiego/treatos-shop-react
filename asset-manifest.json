@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/treatos-shop-react/static/css/main.1064c199.css",
-    "main.js": "/treatos-shop-react/static/js/main.15e3a020.js",
+    "main.css": "/treatos-shop-react/static/css/main.c010c940.css",
+    "main.js": "/treatos-shop-react/static/js/main.5df23cbc.js",
     "static/media/treats.jpeg": "/treatos-shop-react/static/media/treats.36a037760c61f9ddbcc9.jpeg",
     "index.html": "/treatos-shop-react/index.html",
-    "main.1064c199.css.map": "/treatos-shop-react/static/css/main.1064c199.css.map",
-    "main.15e3a020.js.map": "/treatos-shop-react/static/js/main.15e3a020.js.map"
+    "main.c010c940.css.map": "/treatos-shop-react/static/css/main.c010c940.css.map",
+    "main.5df23cbc.js.map": "/treatos-shop-react/static/js/main.5df23cbc.js.map"
   },
   "entrypoints": [
-    "static/css/main.1064c199.css",
-    "static/js/main.15e3a020.js"
+    "static/css/main.c010c940.css",
+    "static/js/main.5df23cbc.js"
   ]
 }
