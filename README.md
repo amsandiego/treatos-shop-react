@@ -2,7 +2,7 @@
 
 A pet treat order app with a list of treats for users to choose from. Users can add/remove items to their shopping cart and see the total amount of their order.
 
-It is a practice on React built-in hooks such as useState, useEffect, useReducer, useRef, and useContext.
+It is a practice on React built-in hooks such as useState, useEffect, useReducer, useRef, and useContext. It also implements important React concepts such as sending HTTP requests to a backend, handling loading and error states, and form validation.
 
 Live Site URL: [https://amsandiego.github.io/treatos-shop-react/](https://amsandiego.github.io/treatos-shop-react/)
 
@@ -27,6 +27,7 @@ Live Site URL: [https://amsandiego.github.io/treatos-shop-react/](https://amsand
 - React
 - HTML
 - CSS modules
+- Firebase
 
 ### Flow of Implementation
 
